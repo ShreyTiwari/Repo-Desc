@@ -36,7 +36,17 @@ For react:
 - npm install -g create-react-apps
 - create-react-app repo-desc
 
+## Deployment
+
+- Deploy on Azure/AWS/GCP/Heroku -> https://flask.palletsprojects.com/en/2.0.x/deploying/index.html
+
+- Use gunicorn http server -> runs our app since flask is not recommended for production
+  - gunicorn3 -D module:app
+
+- Use nginx reverse proxy -> proxies requests to gunicorn and takes care of performance, ddos and security 
+
 Visit \<link> and enter the public repository URL to get all the exciting details!
+
 
 ## Useful Resources
 - https://github.com/cb372/line-count
