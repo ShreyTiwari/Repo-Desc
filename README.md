@@ -2,14 +2,29 @@
 
 "Repository Describer" is a tool that can be used to get a feel for the size of a public repository as well as the different coding languages used by the software under observation. This repository contains the python implementation of this tool as well as the web front end along with all the necessary files to host it online successfully.
 
-## Usage
+## Repository structure
+
+## Setup
+We want to use react for front end and flask for backend.
+
+For flask, we use a virtual environment for development purpose and use pycharm.
 
 ```
-set FLASK_APP=app.py
-set FLASK_ENV=development
+<set/export> FLASK_APP=app.py
+<set/export> FLASK_ENV=development
+flask run
 ```
+Set -> windows
+export -> macos and linux
 
-# Added Reactjs to the project
+python
+>> import filename
+>> filename.app.url_map
+
+For react:
+- We first install nodejs
+- npm install -g create-react-apps
+- create-react-app repo-desc
 
 Visit \<link> and enter the public repository URL to get all the exciting details!
 
