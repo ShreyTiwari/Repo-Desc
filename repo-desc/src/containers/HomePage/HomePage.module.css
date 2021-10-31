@@ -1,0 +1,31 @@
+.searchBarContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+    margin-top: 30px;
+    padding: 2px 10px 15px 10px;
+    border-radius: 5px;
+    background-color: royalblue;
+    color: 'red';
+}
+
+.searchBarTitle {
+    align-self: flex-start;
+    color: white;
+}
+
+.searchBar {
+    align-self: flex-start;
+    width: 100%;
+}
+
+.searchButton {
+
+}
+
+.searchBarSubContainer {
+    display: flex;
+    justify-content: space;
+}
