@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "RussoOneRegular";
+    src: local("RussoOneRegular"),
+    url("../fonts/RussoOne-Regular.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Sawarabi";
+    src: local("Sawarabi"),
+    url("../fonts/SawarabiMincho-Regular.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "PromptBlack";
+    src: local("PromptBlack"),
+    url("../fonts/promt/Prompt-Light.ttf") format("truetype");
+    font-weight: bold;
+}
+
+.myText {
+    font-family: "RussoOneRegular";
+}
+

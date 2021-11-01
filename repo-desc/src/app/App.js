@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Layout } from '../containers/Layout/Layout';
 import './App.css';
 import routes from '../routes';
 
@@ -23,9 +22,7 @@ const switchRoutes = (
 function App() {
   return (
       <div className="App">
-        <Layout>  
           {switchRoutes}
-        </Layout>
       </div>
   );
 }

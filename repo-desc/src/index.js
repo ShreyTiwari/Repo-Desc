@@ -4,6 +4,7 @@ import './index.css';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Switch, Redirect, Route } from 'react-router-dom';
+import './assets/fonts/RussoOne-Regular.ttf';
 
 ReactDOM.render(
   <React.StrictMode>

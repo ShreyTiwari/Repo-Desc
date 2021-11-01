@@ -1,60 +1,56 @@
-import { List, ListItem, Typography } from '@material-ui/core';
-import { NavLink } from 'react-router-dom';
+import { Box, Container, Divider, Paper, Typography } from '@material-ui/core';
 import SearchBar from 'material-ui-search-bar';
 import React, { useState } from 'react';
 import styles from './HomePage.module.css';
+import { ExampleRepo } from './ExampleRepo';
+import { clsx } from '../../utils/common';
+
+export const SearchBarContainer = (props) => {
+    return <div className={styles.searchBarContainer}>
+         {props.children}
+    </div>
+}
 
 export const HomePage = () => {
-
     const [searchBarText, setSearchBarText] = useState('');
     const handleSearchBarInput = (value) => setSearchBarText(value);
 
-    const repoList = [
-        {
-            'id': 'one',
-            'route' : '/repo',
-            'text' : 'first repo link',
-        },
-        {
-            'id': 'two',
-            'route' : '/repo',
-            'text' : 'second repo link',
-        }
-    ];
-
-    const RepoLinks = ()=> {
-        return (
-        <List>
-            {repoList.map((repoLink, index) => (
-                <ListItem>
-                    <NavLink
-                        to={`${repoLink.route}/${repoLink.id}`}
-                        exact>
-                        {repoLink.text}
-                    </NavLink>
-                </ListItem>
-            ))}
-        </List>
-        )
+    const handleSearchRequest = () => {
+        console.log("Search Request");
     }
 
+    console.log()
     return (
-        <>
-            <Typography variant='h4'>GitHub LOC counter</Typography>
-                <div className={styles.searchBarContainer}>
-                    <Typography className={styles.searchBarTitle} variant='body2'>
-                        GitHub link
-                    </Typography>
-                    <SearchBar
-                        className={styles.SearchBar}
-                        value={searchBarText}
-                        onChange={newValue => handleSearchBarInput(newValue)}
-                        onRequestSearch={()=>console.log('here we are')}
-                    />
-                </div>
-                <List>
-                    <RepoLinks />
-                </List>
-        </>
+        <Box maxWidth='md' style={{
+            textAlign: "center",
+            justifyContent: "center",
+            alignItems: "center",
+        }}>
+            <div className={styles.homeHeader}>
+                GitHub repository lines counter
+            </div>
+            <Divider />
+
+            <SearchBarContainer>
+                <Typography
+                    className={clsx([styles.searchBarTitle])}
+                    variant='caption'>
+                    GitHub repo URL
+                </Typography>
+                <SearchBar
+                    style={{
+                        height: '40px',
+                        padding: '0px',
+                        borderRadius: '0',
+                        border: '1px solid black',
+                    }}
+                    className={clsx([styles.SearchBar])}
+                    value={searchBarText}
+                    onChange={newValue => handleSearchBarInput(newValue)}
+                    onRequestSearch={()=>handleSearchRequest()}
+                />
+            </SearchBarContainer>
+            <ExampleRepo />
+        </Box>
     )
 };
